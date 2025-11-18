@@ -1,20 +1,21 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:app_perufest/models/usuario.dart';
 
-// 🔥 MOCK SIMULADO DEL SERVICE
+// MOCK SIMULADO DEL SERVICE
 class MockFirestoreService {
   static bool retornarUsuarioCorrecto = true;
 
   static Future<Usuario?> loginUsuario(String correo, String contrasena) async {
     if (!retornarUsuarioCorrecto) return null;
 
-    if (correo == "admin@test.com" && contrasena == "123456") {
+    if (correo == "jaime@gmail.com" && contrasena == "123456") {
+      // Simula un registro de usuario válido
       return Usuario(
         id: "1",
         nombre: "Administrador",
         username: "admin",
         correo: correo,
-        telefono: "999999999",
+        telefono: "924655655",
         rol: "administrador",
         contrasena: "hashX",
       );
@@ -28,7 +29,7 @@ class MockFirestoreService {
   static Future<Usuario?> obtenerUsuarioPorId(String id) async => null;
 }
 
-// 🔥 VIEWMODEL DE PRUEBA (sin depender de Firebase ni métodos privados)
+// VIEWMODEL DE PRUEBA UNITARIA
 enum AuthState { idle, loading, success, error }
 
 class AuthViewModelMock {
@@ -65,29 +66,23 @@ void main() {
       viewModel = AuthViewModelMock();
     });
 
-    // ------------------------------------------------------------
-    // 1️⃣ LOGIN EXITOSO (credenciales correctas)
-    // ------------------------------------------------------------
+    // LOGIN EXITOSO
     test('Login con credenciales correctas', () async {
-      await viewModel.login("admin@test.com", "123456");
+      await viewModel.login("jaime@gmail.com", "123456");
 
       expect(viewModel.state, AuthState.success);
       expect(viewModel.currentUser?.nombre, "Administrador");
     });
 
-    // ------------------------------------------------------------
-    // 2️⃣ LOGIN FALLIDO (credenciales incorrectas)
-    // ------------------------------------------------------------
+    // LOGIN FALLIDO
     test('Login con credenciales incorrectas', () async {
-      await viewModel.login("admin@test.com", "clave_incorrecta");
+      await viewModel.login("jaimeelias@gmail.com", "123");
 
       expect(viewModel.state, AuthState.error);
       expect(viewModel.errorMessage, "Credenciales incorrectas");
     });
 
-    // ------------------------------------------------------------
-    // 3️⃣ CAMPOS VACÍOS (validación)
-    // ------------------------------------------------------------
+    // CAMPOS VACÍOS
     test('Validar que no se puede iniciar sesión con campos vacíos', () async {
       await viewModel.login("", "");
 
