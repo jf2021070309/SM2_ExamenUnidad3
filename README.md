@@ -23,7 +23,7 @@
 
 Captura de la estructura de carpetas mostrando ` .github/workflows/ `:
 
-![alt text](image-1.png)
+<img width="303" height="369" alt="image" src="https://github.com/user-attachments/assets/90677803-239a-4be6-8c60-a05e5a3f22cf" />
 
 ---
 
@@ -33,33 +33,31 @@ Captura que muestre el archivo `test/main_test.dart` con las pruebas unitarias:
 
 **Contenido de `main_test.dart`**
 
-![alt text](image-5.png)
+<img width="241" height="119" alt="image" src="https://github.com/user-attachments/assets/4dfbafcb-9f8e-47b8-97b2-6887c4a491b1" />
 
 Mock de una servicio simulado:
 
-![alt text](image-2.png)
+<img width="710" height="600" alt="image" src="https://github.com/user-attachments/assets/64e89219-dffb-4333-b179-c5a3e0543fd1" />
 
 ViewModel de una clase para login:
 
-![alt text](image-3.png)
+<img width="692" height="557" alt="image" src="https://github.com/user-attachments/assets/848e8c2e-eb1c-4b6d-b54f-09632018fb40" />
 
 Funcion de las 3 pruebas unitarias:
 
-![alt text](image-4.png)
-
+<img width="687" height="722" alt="image" src="https://github.com/user-attachments/assets/a78630e3-e12f-41de-b09f-095cc132ada3" />
 
 **Contenido de `quality-check.yml`**
 
 Captura de pantalla del contenido del archivo `quality-check.yml`:
 
-![alt text](image.png)
-
+<img width="664" height="858" alt="image" src="https://github.com/user-attachments/assets/491f83f3-64c3-4068-9f71-46b0f5755917" />
 
 **Ejecución del workflow (evidencia)**
 
 Captura de la pestaña `Actions` mostrando la ejecución del workflow y el resultado `100% passed`:
 
-![alt text](image-6.png)
+<img width="1167" height="699" alt="image" src="https://github.com/user-attachments/assets/2bea8c85-1405-477b-a9ea-d390b4b198d3" />
 
 **Explicación de lo realizado**
 
